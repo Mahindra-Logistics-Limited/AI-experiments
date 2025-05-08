@@ -1,0 +1,4 @@
+.env
+uploads/
+vectorstores/
+db_storage/

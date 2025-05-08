@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ollama File QA</title>
+   
+</head>
+<body>
+    <h2>Upload File & Ask Question</h2>
+    <form action="/ask" method="post" enctype="multipart/form-data">
+        <label>Select a file:</label><br>
+        <input type="file" name="file" ><br><br>
+
+        <label>Your question:</label><br>
+        <input type="text" name="question" required><br><br>
+
+        <input type="submit" value="Ask">
+    </form>
+
+    {% if answer %}
+        <h3>Answer:</h3>
+        <p>{{ answer }}</p>
+    {% endif %}
+
+    <script>
+        document.querySelector('form').addEventListener('submit', 
+        function(e) {
+          console.log('Form is submitting');
+        });
+      </script>
+</body>
+</html>
