@@ -1,6 +1,6 @@
 from langchain_community.chat_models import ChatOllama
 from langchain_community.utilities import SQLDatabase
-from langchain_experimental.sql import SQLDatabaseChain
+# from langchain_experimental.sql import SQLDatabaseChain
 
 from sqlalchemy import create_engine
 
@@ -12,12 +12,12 @@ db = SQLDatabase(engine=engine)
 llm = ChatOllama(model="mistral")  # or llama3, llama2, etc.
 
 # Step 3: Create the SQL chain
-db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
+# db_chain = SQLDatabaseChain.from_llm(llm, db, verbose=True)
 
 # Step 4: User input loop
 while True:
     user_input = input("Ask your question about the database (or type 'exit'): ")
     if user_input.lower() in ["exit", "quit"]:
         break
-    response = db_chain.run(user_input)
-    print("Result:", response)
+    # response = db_chain.run(user_input)
+    # print("Result:", response)
